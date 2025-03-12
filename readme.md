@@ -33,3 +33,6 @@ ____________________________________
 #DONT FORGET TO SAVE CHANGES TO THE COUPON-LIST#
 
 || you can copy and paste the original .zip file/folder, repeat process, and use the coupon list for shopping, to-do, etc., it is multi-purpose. There are settings for it, you can change the settings to your liking, if you need help, just ask ||
+
+
+(clearing browser cache me remove the save for the coupon manager, if you need to clear cache, manually de-select the coupon manager)
