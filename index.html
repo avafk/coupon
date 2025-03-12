@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.message {
+    animation: slideInRight 1s ease-in-out forwards 1s;
+    opacity: 0;
+    margin: 0 auto;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <img class="message" src="Resources(ignore)/birthday.png" alt="Message image">
+</div>
+<script>
+// Redirect to another HTML file after 4 seconds
+setTimeout(function() {
+    window.location.href = "Resources(ignore)/emcoupon.html";
+}, 5000); // 5000 milliseconds = 5 seconds
+</script>
+</body>
+</html>
