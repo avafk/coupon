@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coupons</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .box {
+      width: 200px;
+      height: 50px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+    }
+    .row {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <h1>Coupons for Mom</h1>
+  <p>You can decide the contents of each coupon, as long as the request is reasonable.
+  If and when you use a coupon, I may say no if I am very busy, sick, etc.</p>
+  <div class="row">
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+    <div class="box">
+      <input type="checkbox">
+      <input type="text">
+    </div>
+  </div>
+  <button onclick="saveList()">Save</button>
+
+  <script>
+    function saveList() {
+      // Get all checkboxes and text boxes
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      var textboxes = document.querySelectorAll('input[type="text"]');
+      // Create an array to store the checked boxes and their corresponding text box values
+      var checkedBoxes = [];
+      for (var i = 0; i < checkboxes.length; i++) {
+        // Check if the checkbox is checked
+        if (checkboxes[i].checked) {
+          // Add the index of the checkbox and the value of the corresponding text box to the array
+          checkedBoxes.push({
+            index: i,
+            value: textboxes[i].value
+          });
+        }
+      }
+      // Save the array to local storage
+      localStorage.setItem('checkedBoxes', JSON.stringify(checkedBoxes));
+    }
+
+    // Load the checked boxes and their corresponding text box values from local storage
+    var checkedBoxes = JSON.parse(localStorage.getItem('checkedBoxes'));
+    if (checkedBoxes) {
+      // Mark the boxes as checked and set the text box values
+      for (var i = 0; i < checkedBoxes.length; i++) {
+        var checkbox = document.querySelectorAll('input[type="checkbox"]')[checkedBoxes[i].index];
+        checkbox.checked = true;
+        var textbox = document.querySelectorAll('input[type="text"]')[checkedBoxes[i].index];
+        textbox.value = checkedBoxes[i].value;
+      }
+    }
+  </script>
+</body>
+</html>
